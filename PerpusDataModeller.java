@@ -22,3 +22,11 @@ public class PerpusDataModeller {
     public PerpusDataModeller(String driver) throws SQLException {
         this.conn = DBHelper.getConnection(driver);
     }
+    
+    public void Tambah_Peminjaman(AkunMahasiswa peminjam) throws SQLException {
+        String insertPeminjam = "INSERT INTO peminjam (id_akun, email, password)" 
+                + " VALUES (?, ?, ?)";
+        String insertAkunMahasiswa = "INSERT INTO akunmahasiswa (id_akun, universitas)"
+                + " VALUES (?, ?)";
+        String insertDataPinjam = "INSERT INTO datapinjam (id_buku, nama_buku, tanggal_pinjam, id_akun)"
+                + " VALUES (?, ?, ?, ?)";
