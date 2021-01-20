@@ -10,3 +10,13 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+/**
+ *
+ * @author achieto
+ */
+public abstract class Peminjam {
+    private IntegerProperty IDakun;
+    private StringProperty email;
+    private StringProperty password;
+    private ArrayList<DataPinjam> data;
