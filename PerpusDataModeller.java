@@ -58,6 +58,13 @@ public class PerpusDataModeller {
         String insertDataPinjam = "INSERT INTO datapinjam (id_buku, nama_buku, tanggal_pinjam, id_akun)"
                 + " VALUES (?, ?, ?, ?)";
 
+    
+        PreparedStatement stmtPeminjam = conn.prepareStatement(insertPeminjam);
+        stmtPeminjam.setInt(1, peminjam.getIDakun());
+        stmtPeminjam.setString(2, peminjam.getEmail());
+        stmtPeminjam.setString(3, peminjam.getPassword());
+        stmtPeminjam.execute();
+
 
 
         
