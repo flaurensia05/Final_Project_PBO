@@ -93,6 +93,7 @@ erDiagram
           PEMINJAM ||--|{ DATAPINJAM : has
 ```
 ### Design Class Diagram for JavaFX and Database
+![mermaid-diagram-20210120142422](https://user-images.githubusercontent.com/62590379/105141173-556f2200-5b2b-11eb-9e1f-07bd226be4de.png)
 
 ```mermaid
 classDiagram
