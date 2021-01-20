@@ -73,5 +73,9 @@ public abstract class Peminjam {
         return IDakun;
     }
     
+    public StringProperty getEmailProperty() {
+        return email;
+    }
+    
 
     
