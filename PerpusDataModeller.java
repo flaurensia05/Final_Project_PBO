@@ -101,6 +101,31 @@ public class PerpusDataModeller {
         }
         return data;
     }
+    
+    public ObservableList<AkunPelajar> getAkunPelajar() {
+        ObservableList<AkunPelajar> data = FXCollections.observableArrayList();
+        String sql = "SELECT `id_akun`, `email`, `password`, `nama_sekolah` "
+                + "FROM `peminjam` NATURAL JOIN `akunpelajar` "
+                + "ORDER BY `nama_sekolah`";
+        try {
+            ResultSet rs = conn.createStatement().executeQuery(sql);
+            while (rs.next()) {
+                String sqlDataPinjam = "SELECT id_buku, nama_buku, tanggal_pinjam FROM datapinjam "
+                        + "WHERE id_akun=" + rs.getInt(1);
+                ResultSet rsDataPinjam = conn.createStatement().executeQuery(sqlDataPinjam);
+                ArrayList<DataPinjam> dataPinjam = new ArrayList<>();
+                while (rsDataPinjam.next()) {
+                    dataPinjam.add(new DataPinjam(rsDataPinjam.getInt(1), rsDataPinjam.getString(2), rsDataPinjam.getString(3)));
+                }
+                data.add(new AkunPelajar(rs.getInt(1), rs.getString(2), rs.getString(3),
+                        rs.getString(4), dataPinjam));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PerpusDataModeller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return data;
+    }
+    
 
 
 
