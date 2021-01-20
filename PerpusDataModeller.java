@@ -157,6 +157,22 @@ public class PerpusDataModeller {
             }
         return 0;
     }
+    
+    public void tambahDataPinjam(int IDakun, DataPinjam data) throws SQLException {
+        String insertPeminjam = "INSERT INTO datapinjam (id_akun, id_buku, "
+                + "nama_buku, tanggal_pinjam)" 
+                + " VALUES (?, ?, ?, ?)";
+
+        PreparedStatement stmtPerlengkapan = conn.prepareStatement(insertPeminjam);
+        stmtPerlengkapan.setInt(1, IDakun);
+        stmtPerlengkapan.setInt(2, data.getIDBuku());
+        stmtPerlengkapan.setString(3, data.getNamaBuku());
+        stmtPerlengkapan.setString(4, data.getTanggalPinjam());
+        stmtPerlengkapan.execute();
+    }
+}
+
+
  
     
 
