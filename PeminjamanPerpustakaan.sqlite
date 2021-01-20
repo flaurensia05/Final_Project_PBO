@@ -1,0 +1,22 @@
+--
+-- File generated with SQLiteStudio v3.2.1 on Sel Jan 19 03:48:48 2021
+--
+-- Text encoding used: System
+--
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+-- Table: akunmahasiswa
+CREATE TABLE akunmahasiswa (id_akun INT (10) PRIMARY KEY REFERENCES peminjam (id_akun) ON DELETE RESTRICT ON UPDATE CASCADE, universitas VARCHAR (100));
+
+-- Table: akunpelajar
+CREATE TABLE akunpelajar (id_akun INT (10) PRIMARY KEY REFERENCES peminjam (id_akun) ON DELETE RESTRICT ON UPDATE CASCADE, nama_sekolah VARCHAR (100));
+
+-- Table: databuku
+CREATE TABLE databuku (id_buku INT (10) PRIMARY KEY, nama_buku VARCHAR (100), tanggal_pinjam DATE, id_akun INT (10) REFERENCES peminjam (id_akun) ON DELETE RESTRICT ON UPDATE CASCADE);
+
+-- Table: peminjam
+CREATE TABLE peminjam (id_akun INT (10) PRIMARY KEY, email VARCHAR (100), password VARCHAR (100));
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;
