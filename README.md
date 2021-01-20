@@ -52,7 +52,7 @@
 ###        yang artinya sebuah class peminjam memiliki bagian class DataPinjam. Namun class DataPinjam tetap ada walaupun tidak mempunya 
 ###        Peminjam Dimana simbol dari SSagregation adalah garis lurus dengan ujungnya seperti diamond.
 
-### class diagram
+### Class Diagram
 ![mermaid-diagram-20210120133406](https://user-images.githubusercontent.com/62590379/105140463-53f12a00-5b2a-11eb-8575-e1bf5938e58f.png)
 
 ```mermaid
@@ -84,6 +84,7 @@ classDiagram
 ### ER Diagram
 ### Satu entity Peminjam teridiri dari satu entity AkunMahasiswa atau satu entity AkunPelajar 
 ### Satu entity Peminjam dapat mempunyai satu atau lebih entity DataPinjam.
+![mermaid-diagram-20210120135358](https://user-images.githubusercontent.com/62590379/105140854-e0035180-5b2a-11eb-8c00-0096fb88bcc5.png)
 
 ```mermaid
 erDiagram
