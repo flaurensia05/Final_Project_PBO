@@ -49,6 +49,14 @@ public class PerpusDataModeller {
         stmtDataPinjam.setInt(4, peminjam.getIDakun());
         stmtDataPinjam.execute();
     }
+    
+    public void Tambah_Peminjaman(AkunPelajar peminjam) throws SQLException {
+        String insertPeminjam = "INSERT INTO peminjam (id_akun, email, password)" 
+                + " VALUES (?, ?, ?)";
+        String insertAkunPelajar = "INSERT INTO akunpelajar (id_akun, nama_sekolah)"
+                + " VALUES (?, ?)";
+        String insertDataPinjam = "INSERT INTO datapinjam (id_buku, nama_buku, tanggal_pinjam, id_akun)"
+                + " VALUES (?, ?, ?, ?)";
 
 
 
