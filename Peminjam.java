@@ -60,4 +60,14 @@ public abstract class Peminjam {
     public void setPassword(String password) {
         this.password.set(password);
     }
+    
+    public ArrayList<DataPinjam> getData() {
+        return data;
+    }
 
+    public void setData(ArrayList<DataPinjam> data) {
+        this.data = data;
+    }
+    
+
+    
