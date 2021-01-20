@@ -225,5 +225,36 @@ public class FormController implements Initializable {
         tblpeminjam.setItems(akun);
         btntambah.setDisable(true);
     }
+    
+    @FXML
+    void handleButtonTambahBuku(ActionEvent event) {
+        LocalDate ld = dpntanggalpinjam.getValue();
+        String ntanggalpinjam = String.format("%d-%02d-%02d", ld.getYear(),
+                ld.getMonthValue(), ld.getDayOfMonth());
+        DataPinjam dtpinjam = new DataPinjam(Integer.parseInt(tfnidbuku.getText()),tfnnamabuku.getText(),
+        ntanggalpinjam);
+        try {
+            ppdm.tambahDataPinjam(Integer.parseInt(tfnidakun.getText()), dtpinjam);
+            viewDataPinjam(Integer.parseInt(tfnidakun.getText()));
+            btnreload.fire();
+            btnclear.fire();
+        } catch (SQLException ex) {
+            Logger.getLogger(FormController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    @FXML
+    void handleButtonClear1(ActionEvent event) {
+        try {
+            tfidakun1.setText(""+ppdm.nextIDAkun());
+            tfidbuku1.setText("");
+            tfemail1.setText("");
+            tfpassword1.setText("");
+            tfuniv1.setText("");
+            tfnamabuku1.setText("");
+            tfnnamabuku1.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(FormController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 
