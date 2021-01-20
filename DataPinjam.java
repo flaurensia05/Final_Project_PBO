@@ -38,3 +38,24 @@ public String getNamaBuku() {
 public void setNamaBuku(String NamaBuku) {
         this.NamaBuku.set(NamaBuku);
     }
+
+    public String getTanggalPinjam() {
+        return TanggalPinjam.get();
+    }
+
+    public void setTanggalPinjam(String TanggalPinjam) {
+        this.TanggalPinjam.set(TanggalPinjam);
+    }
+    
+    public IntegerProperty getIDBukuProperty() {
+        return IDBuku;
+    }
+    
+    public String getNamaBukuProperty() {
+        return NamaBuku.get();
+    }
+    
+    public String getTanggalPinjamProperty() {
+        return TanggalPinjam.get();
+    }
+}
