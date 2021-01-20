@@ -15,3 +15,10 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import peminjamanperpustakaan.oop.db.DBHelper;
+
+public class PerpusDataModeller {
+    public final Connection conn;
+
+    public PerpusDataModeller(String driver) throws SQLException {
+        this.conn = DBHelper.getConnection(driver);
+    }
