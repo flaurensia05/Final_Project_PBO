@@ -41,6 +41,14 @@ public class PerpusDataModeller {
         stmtAkunMahasiswa.setInt(1, peminjam.getIDakun());
         stmtAkunMahasiswa.setString(2, peminjam.getUniversitas());
         stmtAkunMahasiswa.execute();
+        
+        PreparedStatement stmtDataPinjam = conn.prepareStatement(insertDataPinjam);
+        stmtDataPinjam.setInt(1, peminjam.getData().get(0).getIDBuku());
+        stmtDataPinjam.setString(2, peminjam.getData().get(0).getNamaBuku());
+        stmtDataPinjam.setString(3, peminjam.getData().get(0).getTanggalPinjam());
+        stmtDataPinjam.setInt(4, peminjam.getIDakun());
+        stmtDataPinjam.execute();
+    }
 
 
 
