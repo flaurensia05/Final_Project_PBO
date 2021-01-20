@@ -125,6 +125,21 @@ public class PerpusDataModeller {
         }
         return data;
     }
+    public ObservableList<DataPinjam> getDataPinjam(int IDakun){
+        ObservableList<DataPinjam> data = FXCollections.observableArrayList();
+        String sqlStock = "SELECT id_buku, nama_buku, tanggal_pinjam FROM datapinjam "
+                        + "WHERE id_akun=" + IDakun;
+        try {
+            ResultSet rs = conn.createStatement().executeQuery(sqlStock);
+            while(rs.next()){
+                data.add(new DataPinjam(rs.getInt(1), rs.getString(2), rs.getString(3)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PerpusDataModeller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return data;
+    }
     
 
 
