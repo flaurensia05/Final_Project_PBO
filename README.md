@@ -79,6 +79,8 @@ classDiagram
       }
 ```		
 ### ER Diagram
+### Satu entity Peminjam teridiri dari satu entity AkunMahasiswa atau satu entity AkunPelajar 
+### Satu entity Peminjam dapat mempunyai satu atau lebih entity DataPinjam.
 
 ```mermaid
 erDiagram
