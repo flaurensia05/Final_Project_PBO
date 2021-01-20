@@ -25,3 +25,16 @@ public AkunPelajar(Integer IDakun, String email, String password, String NamaSek
         super(IDakun, email, password, dataa);
         this.NamaSekolah = new SimpleStringProperty(NoKartuPelajar);
     }
+    
+public String getNamaSekolah() {
+        return NamaSekolah.get();
+    }
+
+    public void setNamaSekolah(String NamaSekolah) {
+        this.NamaSekolah.set(NamaSekolah);
+    }
+    
+    public StringProperty getNamaSekolahProperty() {
+        return NamaSekolah;
+    }
+}
