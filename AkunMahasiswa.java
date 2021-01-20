@@ -11,3 +11,15 @@ import javafx.beans.property.StringProperty;
 
 public class AkunMahasiswa extends Peminjam{
     StringProperty universitas;
+
+    public AkunMahasiswa(Integer IDakun, String email, String password, String universitas, ArrayList<DataPinjam> data) {
+        super(IDakun, email, password, data);
+        this.universitas = new SimpleStringProperty(universitas);
+    }
+
+    public AkunMahasiswa(Integer IDakun, String email, String password, String universitas, DataPinjam dataa) {
+        super(IDakun, email, password, dataa);
+        this.universitas = new SimpleStringProperty(universitas);
+    }
+
+   
