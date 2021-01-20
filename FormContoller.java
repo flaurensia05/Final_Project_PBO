@@ -104,3 +104,34 @@ public class FormController implements Initializable {
 
     @FXML
     private TextField tfnamabuku1;
+    
+     @FXML
+    private TextField tfidbuku1;
+
+    @FXML
+    private DatePicker dptanggalpinjam1;
+
+    @FXML
+    private Button btnpinjambuku1;
+
+    @FXML
+    private Button btnreload1;
+
+    @FXML
+    private Button btnclear1;
+
+    @FXML
+    private TextField tfuniv1;
+
+    @FXML
+    private TableView<AkunPelajar> tblpeminjam1;
+
+    @FXML
+    private TableColumn<AkunPelajar, Integer> colidakun1;
+
+    @FXML
+    private TableColumn<AkunPelajar, String> coluniv1;
+
+    @FXML
+    private TableColumn<AkunPelajar, String> colemail1;
+
