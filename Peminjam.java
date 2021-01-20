@@ -69,5 +69,9 @@ public abstract class Peminjam {
         this.data = data;
     }
     
+    public IntegerProperty getIDakunProperty() {
+        return IDakun;
+    }
+    
 
     
