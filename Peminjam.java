@@ -45,4 +45,12 @@ public abstract class Peminjam {
         this.IDakun.set(IDakun);
     }
     
+    public String getEmail() {
+        return email.get();
+    }
+
+    public void setEmail(String email) {
+        this.email.set(email);
+    }
+    
 
