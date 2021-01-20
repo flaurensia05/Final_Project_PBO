@@ -10,10 +10,6 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-/**
- *
- * @author achieto
- */
 public class DataPinjam {
     IntegerProperty IDBuku;
     StringProperty NamaBuku;
