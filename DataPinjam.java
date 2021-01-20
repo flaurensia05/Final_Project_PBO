@@ -18,3 +18,23 @@ public class DataPinjam {
     IntegerProperty IDBuku;
     StringProperty NamaBuku;
     StringProperty TanggalPinjam;
+    public DataPinjam(Integer IDBuku, String NamaBuku, String TanggalPinjam) {
+        this.IDBuku = new SimpleIntegerProperty(IDBuku);
+        this.NamaBuku = new SimpleStringProperty(NamaBuku);
+        this.TanggalPinjam = new SimpleStringProperty(TanggalPinjam);
+    }
+public Integer getIDBuku() {
+        return IDBuku.get();
+    }
+    
+public void setIDBuku(Integer IDBuku) {
+        this.IDBuku.set(IDBuku);
+    }
+    
+public String getNamaBuku() {
+        return NamaBuku.get();
+    }
+
+public void setNamaBuku(String NamaBuku) {
+        this.NamaBuku.set(NamaBuku);
+    }
