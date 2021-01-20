@@ -35,3 +35,14 @@ public abstract class Peminjam {
         this.password = new SimpleStringProperty(password);
         this.data.add(dataa);
     }
+    
+    
+    public Integer getIDakun() {
+        return IDakun.get();
+    }
+
+    public void setIDakun(Integer IDakun) {
+        this.IDakun.set(IDakun);
+    }
+    
+
