@@ -76,6 +76,12 @@ public abstract class Peminjam {
     public StringProperty getEmailProperty() {
         return email;
     }
+        
+    public StringProperty getPasswordProperty() {
+        return password;
+    }
+}
+
     
 
     
