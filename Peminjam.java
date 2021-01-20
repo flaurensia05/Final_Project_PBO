@@ -27,3 +27,11 @@ public abstract class Peminjam {
         this.password = new SimpleStringProperty(password);
         this.data = data;
     }
+    
+    public Peminjam(Integer IDakun, String email, String password, DataPinjam dataa) {
+        data = new ArrayList<>();
+        this.IDakun = new SimpleIntegerProperty(IDakun);
+        this.email = new SimpleStringProperty(email);
+        this.password = new SimpleStringProperty(password);
+        this.data.add(dataa);
+    }
