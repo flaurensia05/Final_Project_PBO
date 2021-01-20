@@ -9,10 +9,7 @@ import java.util.ArrayList;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-/**
- *
- * @author achieto
- */
+
 public class AkunMahasiswa extends Peminjam{
     StringProperty universitas;
 
