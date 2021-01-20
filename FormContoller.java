@@ -196,4 +196,34 @@ public class FormController implements Initializable {
             Logger.getLogger(FormController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+     @FXML
+    void handleButtonPinjamBuku(ActionEvent event) {
+        LocalDate ld = dptanggalpinjam.getValue();
+        String tglpinjam = String.format("%d-%02d-%02d", ld.getYear(), ld.getMonthValue(), ld.getDayOfMonth());
+        AkunMahasiswa akun = new AkunMahasiswa(Integer.parseInt(tfidakun.getText()),
+        tfemail.getText(), tfpassword.getText(), tfuniv.getText(), new DataPinjam(
+        Integer.parseInt(tfidbuku.getText()), tfnamabuku.getText(), tglpinjam));
+        try {
+            ppdm.Tambah_Peminjaman(akun);
+            btnreload.fire();
+            btnclear.fire();
+        } catch (SQLException ex) {
+            Logger.getLogger(FormController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    @FXML
+    void handleButtonReload(ActionEvent event) {
+        ObservableList<AkunMahasiswa> akun = ppdm.getAkunMahasiswa();
+        colidakun.setCellValueFactory(new PropertyValueFactory<>("IDakun"));
+        colemail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        coluniv.setCellValueFactory(new PropertyValueFactory<>("universitas"));
+        //colidbuku.setCellValueFactory(new PropertyValueFactory<>("IDBuku"));
+        tblpeminjam.setItems(null);
+        tblpeminjam.setItems(akun);
+        btntambah.setDisable(true);
+    }
+
 
