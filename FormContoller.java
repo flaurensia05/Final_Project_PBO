@@ -163,5 +163,37 @@ public class FormController implements Initializable {
     private TextField tfnidakun1;
     
     private PerpusDataModeller ppdm;
+    
+    public void viewDataPinjam(int IDakun){
+        ObservableList<DataPinjam> data = ppdm.getDataPinjam(IDakun);
+        colidbuku.setCellValueFactory(new PropertyValueFactory<>("IDBuku"));
+        colnamabuku.setCellValueFactory(new PropertyValueFactory<>("NamaBuku"));
+        coltanggalpinjam.setCellValueFactory((new PropertyValueFactory<>("TanggalPinjam")));
+        tbldatapinjam.setItems(null);
+        tbldatapinjam.setItems(data);
+    }
+    
+    public void viewDataPinjam1(int IDakun){
+        ObservableList<DataPinjam> data = ppdm.getDataPinjam(IDakun);
+        colidbuku1.setCellValueFactory(new PropertyValueFactory<>("IDBuku"));
+        colnamabuku1.setCellValueFactory(new PropertyValueFactory<>("NamaBuku"));
+        coltanggalpinjam1.setCellValueFactory((new PropertyValueFactory<>("TanggalPinjam")));
+        tbldatapinjam1.setItems(null);
+        tbldatapinjam1.setItems(data);
+    }
 
+    @FXML
+    void handleButtonClear(ActionEvent event) {
+        try {
+            tfidakun.setText(""+ppdm.nextIDAkun());
+            tfidbuku.setText("");
+            tfemail.setText("");
+            tfpassword.setText("");
+            tfuniv.setText("");
+            tfnamabuku.setText("");
+            tfnnamabuku.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(FormController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
