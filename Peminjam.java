@@ -53,4 +53,11 @@ public abstract class Peminjam {
         this.email.set(email);
     }
     
+    public String getPassword() {
+        return password.get();
+    }
+
+    public void setPassword(String password) {
+        this.password.set(password);
+    }
 
