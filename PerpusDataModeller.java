@@ -141,6 +141,24 @@ public class PerpusDataModeller {
         return data;
     }
     
+     public int nextIDAkun() throws SQLException{
+        String sql = "SELECT MAX(id_akun) from peminjam";
+        ResultSet rs = conn.createStatement().executeQuery(sql);
+        while(rs.next()){
+                return rs.getInt(1)==0?10000001:rs.getInt(1)+1;
+            }
+        return 10000001;
+    }
+    public int nextIDBuku(int IDakun) throws SQLException{
+        String sql = "SELECT MAX(id_buku) from datapinjam WHERE id_akun="+IDakun;
+        ResultSet rs = conn.createStatement().executeQuery(sql);
+        while(rs.next()){
+                return rs.getInt(1)+1;
+            }
+        return 0;
+    }
+ 
+    
 
 
 
