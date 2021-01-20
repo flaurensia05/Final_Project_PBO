@@ -122,6 +122,7 @@ classDiagram
       class DataPinjam{
         -IntegerProperty IDBuku
         -StringProperty NamaBuku
+        
         -StringrProperty TanggalPinjam
       }
       class PerpusDataModeller{
