@@ -134,4 +134,34 @@ public class FormController implements Initializable {
 
     @FXML
     private TableColumn<AkunPelajar, String> colemail1;
+    
+    @FXML
+    private TableView<DataPinjam> tbldatapinjam1;
+
+    @FXML
+    private TableColumn<DataPinjam, Integer> colidbuku1;
+
+    @FXML
+    private TableColumn<DataPinjam, String> colnamabuku1;
+
+    @FXML
+    private TableColumn<DataPinjam, String> coltanggalpinjam1;
+
+    @FXML
+    private TextField tfnidbuku1;
+
+    @FXML
+    private TextField tfnnamabuku1;
+
+    @FXML
+    private DatePicker dpntanggalpinjam1;
+
+    @FXML
+    private Button btntambah1;
+
+    @FXML
+    private TextField tfnidakun1;
+    
+    private PerpusDataModeller ppdm;
+
 
