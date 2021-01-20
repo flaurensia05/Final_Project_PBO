@@ -21,3 +21,26 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+public class FormController implements Initializable {
+    
+    @FXML
+    private TextField tfidakun;
+
+    @FXML
+    private TextField tfemail;
+
+    @FXML
+    private TextField tfpassword;
+
+    @FXML
+    private TextField tfnamabuku;
+
+    @FXML
+    private TextField tfidbuku;
+
+    @FXML
+    private DatePicker dptanggalpinjam;
+
+    @FXML
+    private Button btnpinjambuku;
