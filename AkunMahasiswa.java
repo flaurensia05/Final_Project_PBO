@@ -22,4 +22,15 @@ public class AkunMahasiswa extends Peminjam{
         this.universitas = new SimpleStringProperty(universitas);
     }
 
-   
+   public String getUniversitas() {
+        return universitas.get();
+    }
+
+    public void setUniversitas(String universitas) {
+        this.universitas.set(universitas);
+    }
+    
+    public StringProperty getUniversitasProperty() {
+        return universitas;
+    }
+}
